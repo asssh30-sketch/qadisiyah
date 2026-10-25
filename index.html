@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>منصة مدرسة القادسية الذكية للتدريب على الاختبارات المركزية</title>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet" data-k>
+<style data-k>
+:root{--bg:#f4f8fc;--surf:#fff;--ink:#14263d;--mute:#5d6f86;--line:#d9e3ee;--blue:#1d5fa8;--sky:#dcecfa;--gold:#f0a020;--sun:#fff3d6;--maroon:#8b2230;--ok:#1f8a4c;--okbg:#e2f5ea;--bad:#c0332b;--badbg:#fbe6e4;--sat:env(safe-area-inset-top,0px);--sab:env(safe-area-inset-bottom,0px);box-sizing:border-box;padding-top:var(--sat);padding-bottom:var(--sab)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1a2a;--surf:#16263b;--ink:#eaf1f9;--mute:#9bb0c8;--line:#2a3f58;--blue:#6aaeed;--sky:#1b3552;--gold:#f5b64a;--sun:#33290f;--maroon:#e58a95;--ok:#4cc585;--okbg:#14382a;--bad:#ff8a80;--badbg:#401c1a}}
+:root[data-theme="dark"]{--bg:#0e1a2a;--surf:#16263b;--ink:#eaf1f9;--mute:#9bb0c8;--line:#2a3f58;--blue:#6aaeed;--sky:#1b3552;--gold:#f5b64a;--sun:#33290f;--maroon:#e58a95;--ok:#4cc585;--okbg:#14382a;--bad:#ff8a80;--badbg:#401c1a}
+*{box-sizing:border-box}html{scroll-padding-top:var(--sat)}
+body{margin:0;background:var(--bg);color:var(--ink);font:500 16px/1.7 Tajawal,"Segoe UI",Tahoma,sans-serif}
+button,input,select,textarea{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+header{background:var(--surf);border-bottom:1px solid var(--line);position:sticky;top:var(--sat);z-index:5}
+.bar{max-width:1040px;margin:auto;display:flex;align-items:center;gap:12px;padding:10px 16px}
+.bar img{width:56px;height:56px;border-radius:50%;object-fit:cover;border:2px solid var(--gold)}
+.bar h1{font-size:clamp(14px,2.6vw,20px);margin:0;line-height:1.35;font-weight:800;flex:1}
+.bar h1 small{display:block;font-weight:500;color:var(--mute);font-size:.72em}
+.ib{border:1px solid var(--line);background:var(--surf);border-radius:10px;padding:6px 12px;cursor:pointer}
+body::before{content:"";position:fixed;inset:0 0 auto;height:var(--sat);background:var(--surf);z-index:10}
+main{max-width:1040px;margin:auto;padding:20px 16px 60px}
+.hero{background:linear-gradient(160deg,var(--sky),var(--sun));border:1px solid var(--line);border-radius:22px;padding:28px 22px;margin-bottom:22px}
+.hero h2{margin:0 0 6px;font-size:clamp(22px,4.5vw,34px);font-weight:800;line-height:1.35}
+.hero p{margin:0;color:var(--mute);max-width:60ch}
+h3{font-size:18px;margin:26px 0 10px;font-weight:800}
+.grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(210px,1fr))}
+.opt{background:var(--surf);border:2px solid var(--line);border-radius:16px;padding:16px;text-align:right;cursor:pointer;display:flex;gap:12px;align-items:center;font-weight:700}
+.opt:hover{border-color:var(--blue)}.opt[aria-pressed=true]{border-color:var(--gold);background:var(--sun)}
+.opt .e{font-size:28px}.opt small{display:block;color:var(--mute);font-weight:500}
+.btn{background:var(--blue);color:#fff;border:0;border-radius:12px;padding:10px 20px;font-weight:700;cursor:pointer}
+.btn.g{background:var(--gold);color:#2b1c00}.btn.o{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.btn.r{background:var(--bad);color:#fff}.btn:disabled{opacity:.45;cursor:not-allowed}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .btn{color:#06121f}}
+.card{background:var(--surf);border:1px solid var(--line);border-radius:16px;padding:18px;margin-bottom:12px}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}.sp{flex:1}
+.tag{font-size:13px;border-radius:99px;padding:1px 10px;background:var(--sky);color:var(--blue);font-weight:700}
+.tag.f{background:var(--sun);color:var(--maroon)}
+.crumb{color:var(--mute);margin-bottom:10px}.crumb b{color:var(--ink)}
+.q{font-size:20px;font-weight:700;margin:0 0 14px;line-height:1.7}
+.ans{display:block;width:100%;text-align:right;background:var(--surf);border:2px solid var(--line);border-radius:14px;padding:12px 14px;margin-bottom:10px;cursor:pointer;font-weight:500}
+.ans:hover{border-color:var(--blue)}.ans.sel{border-color:var(--blue);background:var(--sky)}
+.ans.ok{border-color:var(--ok);background:var(--okbg)}.ans.no{border-color:var(--bad);background:var(--badbg)}
+.prog{height:8px;background:var(--line);border-radius:9px;overflow:hidden;margin:6px 0 14px}.prog i{display:block;height:100%;background:var(--gold);transition:width .3s}
+.dots{display:flex;gap:6px;flex-wrap:wrap;margin-top:14px}
+.dots button{width:34px;height:34px;border-radius:9px;border:1px solid var(--line);background:var(--surf);cursor:pointer}
+.dots .on{background:var(--blue);color:#fff;border-color:var(--blue)}.dots .dn{background:var(--sky)}
+.timer{font-weight:800;color:var(--maroon);font-variant-numeric:tabular-nums}
+.ring{width:150px;height:150px;border-radius:50%;display:grid;place-items:center;margin:auto;background:conic-gradient(var(--ok) calc(var(--p)*1%),var(--line) 0)}
+.ring span{width:116px;height:116px;border-radius:50%;background:var(--surf);display:grid;place-items:center;font-size:32px;font-weight:800}
+.rv{border-inline-start:6px solid var(--line)}.rv.ok{border-color:var(--ok)}.rv.no{border-color:var(--bad)}
+.note{background:var(--okbg);border-radius:12px;padding:10px 14px;margin-top:8px;font-size:15px}
+.warn{background:var(--sun);border-radius:12px;padding:10px 14px;font-size:15px}
+label{display:block;font-weight:700;margin:12px 0 4px}
+input,select,textarea{width:100%;background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:9px 12px}
+textarea{min-height:150px;direction:rtl}
+iframe{width:100%;height:70vh;border:1px solid var(--line);border-radius:14px;background:#fff}
+.tw{overflow-x:auto}table{width:100%;border-collapse:collapse;font-size:15px}th,td{padding:8px;border-bottom:1px solid var(--line);text-align:right;white-space:nowrap}
+.doc{overflow-x:auto;line-height:1.9}.doc table{border-collapse:collapse}.doc td,.doc th{border:1px solid var(--line);padding:6px;white-space:normal}.doc img{max-width:100%}.oimg{display:block;max-width:100%;max-height:180px;border-radius:10px;margin:2px auto;background:#fff}.qbi{background:var(--bg)}.qi{display:block;max-width:100%;max-height:320px;border-radius:12px;margin:8px 0 14px;background:#fff}details{margin-top:8px}summary{cursor:pointer;font-weight:700}
+footer{text-align:center;color:var(--mute);font-size:14px;padding:20px}
+@media print{header,.noprint,footer{display:none}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<header><div class="bar">
+<img src="data:image/jpeg;base64,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" alt="شعار مدرسة القادسية الأهلية">
+<h1>منصة مدرسة القادسية الذكية<small>للتدريب على الاختبارات المركزية</small></h1>
+<button class="ib" id="th" aria-label="تبديل الوضع">🌓</button>
+<button class="ib" id="tc">👩‍🏫 المعلم</button>
+</div></header>
+<main id="app"></main>
+<footer>مدرسة القادسية الأهلية · الاختبارات المركزية · المنهج السعودي<br><span id="ds"></span></footer>
+
+<script type="application/json" id="seed" data-k>{"exams":[],"wa":""}</script>
+<script data-k>
+const G={p3:'الثالث الابتدائي',p6:'السادس الابتدائي',m3:'الثالث المتوسط'};
+const S={math:['الرياضيات','🧮'],sci:['العلوم','🔬'],ar:['لغتي','📖'],en:['اللغة الإنجليزية','🔤']};
+const SAMPLE={
+'p3.math':['ما ناتج ٤٥ + ٢٧؟|٧٢|٧٠|٦٢|٨٢|1|٤٥ + ٢٧ = ٧٢','ناتج ٦ × ٧ يساوي:|٤٢|٣٦|٤٨|٤٩|1|٦ × ٧ = ٤٢'],
+'p3.sci':['أي مما يلي مصدر طبيعي للضوء؟|الشمس|المصباح|الشمعة|الشاشة|1|الشمس مصدر طبيعي للضوء.','أي مما يلي مادة سائلة؟|الماء|الحجر|الخشب|الحديد|1|الماء يأخذ شكل الإناء الذي يوضع فيه.'],
+'p3.ar':['ضد كلمة «كبير» هو:|صغير|طويل|واسع|قوي|1|ضد الكبير هو الصغير.','مفرد كلمة «كتب» هو:|كتاب|كاتب|مكتب|مكتبة|1|الكتب جمع، ومفردها كتاب.'],
+'p3.en':['What color is the sun?|Yellow|Blue|Green|Black|1|The sun looks yellow.','The plural of “cat” is:|cats|cates|cat’s|caties|1|We add s to make most nouns plural.'],
+'p6.math':['ناتج ٣/٤ + ١/٤ يساوي:|١|٤/٨|١/٢|٣/٤|1|المقامان متساويان: ٤/٤ = ١','مساحة مستطيل طوله ٨ وعرضه ٥ تساوي:|٤٠|١٣|٢٦|٣٠|1|المساحة = الطول × العرض = ٤٠'],
+'p6.sci':['العضو المسؤول عن ضخ الدم في الجسم هو:|القلب|الرئتان|الكبد|المعدة|1|القلب يضخ الدم إلى أجزاء الجسم.','أي مما يلي كوكب غازي؟|المشتري|الأرض|الزهرة|عطارد|1|المشتري من الكواكب الغازية العملاقة.'],
+'p6.ar':['الفاعل في جملة «كتب الطالبُ الدرسَ» هو:|الطالبُ|الدرسَ|كتبَ|لا يوجد|1|الفاعل من قام بالفعل وهو الطالب.','جمع كلمة «مدرسة» هو:|مدارس|مدرسون|مدرسين|مدرسوا|1|جمع التكسير: مدارس.'],
+'p6.en':['She ___ to school every day.|goes|go|going|gone|1|With she, the present simple verb takes s.','The opposite of “hot” is:|cold|warm|big|fast|1|Hot and cold are antonyms.'],
+'m3.math':['حل المعادلة: ٢س + ٤ = ١٢|٤|٢|٨|٦|1|٢س = ٨، إذن س = ٤','ناتج (٣)² + (٤)² يساوي:|٢٥|٧|١٤|٤٩|1|٩ + ١٦ = ٢٥'],
+'m3.sci':['وحدة قياس القوة في النظام الدولي هي:|النيوتن|الجول|الواط|الباسكال|1|القوة تقاس بالنيوتن.','الجزء من الخلية الذي يتحكم في أنشطتها هو:|النواة|الجدار الخلوي|الفجوة|الغشاء|1|النواة مركز التحكم في الخلية.'],
+'m3.ar':['إعراب «مجتهدٌ» في «الطالبُ مجتهدٌ»:|خبر مرفوع|مبتدأ مرفوع|فاعل|مفعول به|1|الطالبُ مبتدأ، ومجتهدٌ خبره.','أي الجمل التالية فيها اسم «إنّ» منصوب؟|إنّ العلمَ نورٌ|العلمُ نورٌ|كان العلمُ نورًا|علمَ الطالبُ|1|«العلمَ» اسم إنّ منصوب.'],
+'m3.en':['If it rains, we ___ at home.|will stay|stayed|staying|stays|1|First conditional: if + present, will + verb.','The book ___ by the students.|was read|read|reads|reading|1|Passive voice in the past: was/were + past participle.']};
+const ld=(k,d)=>{try{return JSON.parse(localStorage.getItem(k))||d}catch(e){return d}};
+let LSOK=true;const sv=(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v))}catch(e){LSOK=false}};
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const parseQ=l=>{const p=l.split('|').map(x=>x.trim());return{q:p[0],o:p.slice(1,5),a:(parseInt(p[5])||1)-1,e:p[6]||'',u:p[7]||''}};
+const built=Object.keys(SAMPLE).map(k=>{const[g,s]=k.split('.');return{id:'b'+k,g,s,title:'نموذج تدريبي — '+S[s][0],type:'quiz',time:5,built:1,qs:SAMPLE[k].map(parseQ)}});
+let user=ld('qd_exams',[]),res=ld('qd_res',[]),sel={g:null,s:null},tm=null,ex,st;
+const SEED=(()=>{try{return JSON.parse(document.getElementById('seed').textContent)}catch(e){return{exams:[],wa:''}}})();const all=()=>built.concat(cur());
+const app=document.getElementById('app');
+const crumb=()=>`<div class="crumb noprint">${sel.g?'<b>'+G[sel.g]+'</b>':''}${sel.s?' ‹ <b>'+S[sel.s][0]+'</b>':''}</div>`;
+
+function home(){clearInterval(tm);
+app.innerHTML=`<section class="hero"><h2>تدرّب على الاختبارات المركزية بثقة</h2><p>اختر صفك ومادتك، ثم ابدأ اختبارًا تفاعليًا أو افتح نموذج Google Forms أو Microsoft Forms. تظهر نتيجتك والإجابات الصحيحة بعد التسليم.</p></section>
+<h3>١. اختر الصف</h3><div class="grid">${Object.entries(G).map(([k,v])=>`<button class="opt" aria-pressed="${sel.g==k}" data-g="${k}"><span class="e">🎓</span><span>${v}</span></button>`).join('')}</div>
+<h3>٢. اختر المادة</h3><div class="grid">${Object.entries(S).map(([k,v])=>`<button class="opt" aria-pressed="${sel.s==k}" data-s="${k}"><span class="e">${v[1]}</span><span>${v[0]}</span></button>`).join('')}</div>
+<p style="margin-top:22px"><button class="btn g" id="go" ${sel.g&&sel.s?'':'disabled'}>عرض الاختبارات المتاحة</button></p>${honor()}`;
+app.querySelectorAll('[data-g]').forEach(b=>b.onclick=()=>{sel.g=b.dataset.g;home()});
+app.querySelectorAll('[data-s]').forEach(b=>b.onclick=()=>{sel.s=b.dataset.s;sel.g?list():home()});
+document.getElementById('go').onclick=list;scrollTo(0,0)}
+
+function list(){clearInterval(tm);const l=all().filter(e=>e.g==sel.g&&e.s==sel.s);
+const ty={quiz:'تفاعلي',file:'ملف',google:'Google Forms',ms:'Microsoft Forms'};
+app.innerHTML=crumb()+`<h3 style="margin-top:0">الاختبارات المتاحة</h3>`+(l.length?l.map(e=>`<div class="card row"><div class="sp"><b>${esc(e.title)}</b><br><span class="tag${e.type=='quiz'?'':' f'}">${ty[e.type]}</span> ${e.type=='quiz'?`<span class="tag">${e.qs.length} أسئلة</span>`+(e.time?` <span class="tag">${e.time} دقائق</span>`:''):''}</div><button class="btn" data-id="${e.id}">ابدأ الاختبار</button></div>`).join(''):'<div class="card">لا توجد اختبارات لهذا الاختيار بعد. يمكن للمعلم إضافتها من لوحة المعلم.</div>')+`<button class="btn o" id="bk">رجوع</button>`;
+app.querySelectorAll('[data-id]').forEach(b=>b.onclick=()=>start(b.dataset.id));
+document.getElementById('bk').onclick=home;scrollTo(0,0)}
+
+function start(id){ex=all().find(e=>e.id==id);
+if(ex.type=='file')return fileView();if(ex.type!='quiz')return formView();
+app.innerHTML=crumb()+`<div class="card"><h3 style="margin-top:0">${esc(ex.title)}</h3><label for="nm">اسم الطالب</label><input id="nm" placeholder="اكتب اسمك الثلاثي" autocomplete="name" value="${esc(ld('qd_name',''))}"><p class="warn">${ex.qs.length} أسئلة${ex.time?' · الوقت '+ex.time+' دقائق':''}. يمكنك التنقل بين الأسئلة وتعديل إجاباتك قبل التسليم.</p><button class="btn g" id="st">ابدأ الآن</button> <button class="btn o" id="bk">رجوع</button></div>`;
+document.getElementById('bk').onclick=list;
+document.getElementById('st').onclick=()=>{const n=document.getElementById('nm').value.trim();sv('qd_name',n);if(!n){document.getElementById('nm').focus();return}
+const qs=ex.qs.map(q=>{const idx=q.o.map((_,i)=>i).sort(()=>q.o.length==2?0:Math.random()-.5);return{q:q.q,e:q.e,u:q.u||'',img:q.img||'',oi:idx.map(i=>(q.oi||[])[i]||''),o:idx.map(i=>q.o[i]),a:idx.indexOf(q.a)}});
+st={n,qs,ans:Array(qs.length).fill(-1),i:0,left:(ex.time||0)*60};play();
+if(st.left){tm=setInterval(()=>{st.left--;const t=document.getElementById('tm');if(t)t.textContent=fmt(st.left);if(st.left<=0)finish()},1000)}}}
+const fmt=s=>String(Math.floor(s/60)).padStart(2,'0')+':'+String(s%60).padStart(2,'0');
+
+function play(){const q=st.qs[st.i],n=st.qs.length;
+app.innerHTML=crumb()+`<div class="card"><div class="row"><b>السؤال ${st.i+1} من ${n}</b><span class="sp"></span>${st.left?'<span class="timer" id="tm">'+fmt(st.left)+'</span>':''}</div><div class="prog"><i style="width:${(st.i+1)/n*100}%"></i></div>
+<p class="q">${esc(q.q)}</p>${q.img?`<img class="qi" src="${esc(q.img)}" alt="صورة السؤال">`:''}${q.o.map((o,i)=>`<button class="ans ${st.ans[st.i]==i?'sel':''}" data-i="${i}">${oh(q,i,o)}</button>`).join('')}
+<div class="row" style="margin-top:8px"><button class="btn o" id="pv" ${st.i?'':'disabled'}>السابق</button><button class="btn o" id="nx" ${st.i<n-1?'':'disabled'}>التالي</button><span class="sp"></span><button class="btn g" id="fn">تسليم الاختبار</button></div>
+<div class="dots">${st.qs.map((_,i)=>`<button data-d="${i}" class="${i==st.i?'on':st.ans[i]>=0?'dn':''}" aria-label="سؤال ${i+1}">${i+1}</button>`).join('')}</div></div>`;
+app.querySelectorAll('.ans').forEach(b=>b.onclick=()=>{st.ans[st.i]=+b.dataset.i;play()});
+app.querySelectorAll('[data-d]').forEach(b=>b.onclick=()=>{st.i=+b.dataset.d;play()});
+document.getElementById('pv').onclick=()=>{st.i--;play()};document.getElementById('nx').onclick=()=>{st.i++;play()};
+document.getElementById('fn').onclick=()=>{const m=st.ans.filter(a=>a<0).length;if(!m||confirm('بقي '+m+' سؤال بلا إجابة. هل تريد التسليم؟'))finish()}}
+
+function finish(){clearInterval(tm);const n=st.qs.length,sc=st.qs.filter((q,i)=>st.ans[i]==q.a).length,p=Math.round(sc/n*100),wr=sc<n,bd=badges(p,st.n),sk=skills(),tx='نتيجة الطالب: '+st.n+'\nالاختبار: '+ex.title+' ('+G[ex.g]+' — '+S[ex.s][0]+')\nالدرجة: '+sc+'/'+n+' ('+p+'٪)';
+res.push({n:st.n,t:ex.title+(st.retry?' (علاجي)':''),g:G[ex.g],s:S[ex.s][0],sc:sc+'/'+n,p,d:new Date().toLocaleString('ar-SA')});sv('qd_res',res);saveRes(res[res.length-1]);
+const msg=p>=90?'ممتاز! أداء رائع 🌟':p>=75?'جيد جدًا، واصل التقدم':p>=50?'جيد، راجع الأسئلة الخاطئة وأعد المحاولة':'تحتاج إلى مزيد من التدريب، لا تستسلم';
+app.innerHTML=crumb()+`<div class="card" style="text-align:center"><p style="margin:0 0 10px">نتيجة الطالب: <b>${esc(st.n)}</b></p><div class="ring" style="--p:${p}"><span>${p}٪</span></div><h3>${sc} من ${n} إجابات صحيحة</h3><p>${msg}</p><p>${bd}</p>${sk}<div class="row noprint" style="justify-content:center"><button class="btn" id="rt">إعادة الاختبار</button>${wr?'<button class="btn g" id="rw">أعد الأسئلة الخاطئة فقط</button>':''}${p>=75?'<button class="btn o" id="ct">🏅 شهادة تقدير</button>':''}${SEED.wa?`<a class="btn o" target="_blank" rel="noopener" href="https://wa.me/${esc(SEED.wa)}?text=${encodeURIComponent(tx)}">📲 أرسل نتيجتي للمعلم</a>`:''}<button class="btn o" id="cp">📋 نسخ النتيجة</button><button class="btn o" id="pr">طباعة النتيجة</button><button class="btn o" id="hm">الرئيسية</button></div></div>
+<h3>مراجعة الإجابات</h3>`+st.qs.map((q,i)=>{const ok=st.ans[i]==q.a;return`<div class="card rv ${ok?'ok':'no'}"><b>${i+1}. ${esc(q.q)}</b>${q.img?`<img class="qi" src="${esc(q.img)}" alt="">`:''}${q.o.map((o,j)=>`<div class="ans ${j==q.a?'ok':j==st.ans[i]?'no':''}" style="cursor:default;margin:8px 0 0">${oh(q,j,o)}${j==q.a?' ✓ الإجابة الصحيحة':j==st.ans[i]?' ✗ إجابتك':''}</div>`).join('')}${st.ans[i]<0?'<div class="warn" style="margin-top:8px">لم تجب عن هذا السؤال</div>':''}${q.e?`<div class="note">💡 ${esc(q.e)}</div>`:''}</div>`}).join('');
+document.getElementById('rt').onclick=()=>start(ex.id);const rw=document.getElementById('rw'),ct=document.getElementById('ct');if(rw)rw.onclick=()=>{const w=st.qs.filter((q,i)=>st.ans[i]!=q.a);st={n:st.n,qs:w,ans:Array(w.length).fill(-1),i:0,left:0,retry:1};play()};if(ct)ct.onclick=()=>cert(st.n,p);const cp=document.getElementById('cp');cp.onclick=()=>{try{navigator.clipboard.writeText(tx).then(()=>{cp.textContent='✓ تم النسخ'},()=>prompt('انسخ النتيجة',tx))}catch(e){prompt('انسخ النتيجة',tx)}};document.getElementById('pr').onclick=()=>print();document.getElementById('hm').onclick=home;scrollTo(0,0)}
+
+function formView(){let u=ex.url;if(ex.type=='google'&&!/embedded=/.test(u))u+=(u.includes('?')?'&':'?')+'embedded=true';
+app.innerHTML=crumb()+`<div class="card"><div class="row"><b class="sp">${esc(ex.title)}</b><a class="btn o" href="${esc(ex.url)}" target="_blank" rel="noopener">فتح في نافذة جديدة</a></div><p class="warn">${ex.type=='google'?'اضغط «إرسال» في نهاية النموذج لتظهر النتيجة والإجابات حسب إعدادات المعلم.':'اضغط «إرسال» في نهاية النموذج، وستظهر النتيجة حسب إعدادات المعلم.'}</p><iframe src="${esc(u)}" title="${esc(ex.title)}" loading="lazy" allow="fullscreen">جارٍ التحميل…</iframe></div><button class="btn o" id="bk">رجوع</button>`;
+document.getElementById('bk').onclick=list;scrollTo(0,0)}
+
+function teacher(){const pin=ld('qd_pin','1234');if(DB&&!CAN)return alert('لوحة المعلم متاحة لمن يملك صلاحية التحرير على هذه الصفحة. سجّل الدخول بحساب المعلم.');if(!CAN&&!tok&&prompt('أدخل رمز المعلم (الافتراضي 1234)')!==pin)return;tok=1;
+clearInterval(tm);
+const opt=o=>Object.entries(o).map(([k,v])=>`<option value="${k}">${Array.isArray(v)?v[0]:v}</option>`).join('');
+app.innerHTML=`<h3 style="margin-top:0">لوحة المعلم</h3><div class='card' style='background:var(--sun)'><b>🌐 نشر الاختبارات للجميع</b><p>الاختبارات التي تضيفها تظهر لك فقط حتى تضغط «نشر». بعد النشر يراها كل من يفتح رابط المنصة، بلا تسجيل دخول.</p><label for='wa'>رقم واتساب المعلم لاستلام النتائج (اختياري)</label><input id='wa' dir='ltr' placeholder='05XXXXXXXX' value='${esc(SEED.wa||'')}'><p><button class='btn g' id='pb'>${window.claude?'نشر للجميع':'تنزيل نسخة محدّثة للموقع'} (${cur().length} اختبار)</button></p><p class='warn' id='pst'>انشر عندما لا يكون أحد الطلاب في منتصف اختبار، لأن الصفحة تُعاد تحميلها عند النشر.</p></div><div class="card"><b>إضافة اختبار</b>
+<label for="eg">الصف</label><select id="eg">${opt(G)}</select><label for="es">المادة</label><select id="es">${opt(S)}</select>
+<label for="et">عنوان الاختبار</label><input id="et" placeholder="مثال: اختبار الوحدة الثانية">
+<label for="ety">نوع الاختبار</label><select id="ety"><option value="quiz">اختبار تفاعلي (أسئلة اختيار من متعدد)</option><option value="google">رابط Google Forms</option><option value="ms">رابط Microsoft Forms</option><option value="file">ملف PDF أو Word (docx)</option></select>
+<div id="fq"><label for="etm">المدة بالدقائق (0 = بدون وقت)</label><input id="etm" type="number" min="0" value="10">
+<b style="display:block;margin-top:14px">الأسئلة</b><p class="warn">اكتب السؤال وخياراته، ثم حدد الإجابة الصحيحة بالدائرة. أضف اسم الوحدة أو المهارة ليظهر للطالب مستواه فيها.</p><div id='wbox' class='card' style='background:var(--sun)'><b>📄 استيراد الأسئلة من ملف Word</b><p class='row'><label class='btn g' style='display:inline-block;margin:0;cursor:pointer'>اختر ملف Word (docx)<input type='file' id='ew' accept='.docx' hidden></label><button class='btn o' id='tw' type='button'>تنزيل نموذج التنسيق</button></p><p class='warn' id='wst'>اكتب كل سؤال برقمه، ثم الخيارات أ) ب) ج) د)، ثم «الإجابة: ب». يمكن إضافة «التفسير:» و«المهارة:». لأسئلة صح وخطأ اكتب «الإجابة: صح». تظهر الأسئلة بعد الرفع للمراجعة قبل الحفظ.</p></div><div id="qb"></div><p class="row"><button class="btn" id="aq" type="button">+ سؤال اختيار من متعدد</button><button class="btn o" id="at" type="button">+ سؤال صح وخطأ</button></p><details><summary>استيراد سريع من ملف أو نص (للمتقدمين)</summary><label for="eq">سؤال في كل سطر</label><textarea id="eq" placeholder="السؤال|١|٢|٣|٤|رقم الصحيح|التفسير|المهارة"></textarea>
+<label for="ef">أو ارفع ملف (txt أو json)</label><input type="file" id="ef" accept=".txt,.json"><p><button class="btn o" id="tp">تنزيل نموذج الملف</button></p></details></div>
+<div id='ff' hidden><label for='efl'>ارفع ملف PDF أو Word (docx)</label><input type='file' id='efl' accept='.pdf,.docx'><p class='warn' id='fst'>يُعرض ملف PDF للطالب داخل الصفحة. ويُحوَّل ملف Word إلى نص مقروء داخل الصفحة مع الجداول والصور.</p></div><div id="fu" hidden><label for="eu">رابط النموذج</label><input id="eu" dir="ltr" placeholder="https://forms.gle/..."><p class="warn">في Google Forms استخدم «إرسال ← رابط»، وفعّل خيار عرض النتيجة (وضع الاختبار). في Microsoft Forms استخدم «مشاركة ← رابط».</p></div>
+<p><button class="btn g" id="sa">حفظ الاختبار</button></p></div>
+<div class="card"><b>الاختبارات المضافة (${cur().length})</b>${cur().map(e=>`<div class="row" style="margin-top:8px"><span class="sp">${esc(e.title)} <span class="tag">${G[e.g]} · ${S[e.s][0]}</span></span><button class="btn r" data-del="${e.id}">حذف</button></div>`).join('')||'<p>لا يوجد.</p>'}<p class="row"><button class="btn o" id="ex">تصدير الاختبارات</button><button class="btn o" id="im">استيراد</button><input type="file" id="imf" accept=".json" hidden></p></div>
+<div class="card"><div class="row"><b class="sp">نتائج الطلاب (${res.length})</b><button class="btn o" id="csv">تصدير النتائج (Excel)</button><button class="btn r" id="cl">مسح</button></div><p class="row"><span class="tag">عدد المحاولات: ${res.length}</span><span class="tag">متوسط النتائج: ${res.length?Math.round(res.reduce((a,r)=>a+r.p,0)/res.length):0}٪</span></p><div class="tw"><table><tr><th>الطالب</th><th>الاختبار</th><th>الدرجة</th><th>النسبة</th><th>التاريخ</th></tr>${res.slice().reverse().map(r=>`<tr><td>${esc(r.n)}</td><td>${esc(r.t)}</td><td>${r.sc}</td><td>${r.p}٪</td><td>${esc(r.d)}</td></tr>`).join('')}</table></div><p class="warn">النتائج محفوظة في هذا المتصفح فقط.</p></div>
+<div class="card"><b>تغيير رمز المعلم</b><input id="np" placeholder="الرمز الجديد"><p><button class="btn o" id="sp">حفظ الرمز</button></p></div>`;
+const $=i=>document.getElementById(i);let pend=null;
+$('ety').onchange=()=>{const v=$('ety').value;$('fq').hidden=v!='quiz';$('fu').hidden=!(v=='google'||v=='ms');$('ff').hidden=v!='file'};PF=null;$('efl').onchange=e=>fileIn(e.target.files[0]);$('ew').onchange=e=>docQ(e.target.files[0]);$('pb').onclick=pubAll;$('tw').onclick=()=>dl('نموذج-أسئلة.txt',TPL);$('aq').onclick=()=>addQ();$('at').onclick=()=>addQ(1);addQ();
+$('ef').onchange=e=>{const f=e.target.files[0];if(!f)return;const r=new FileReader();r.onload=()=>{try{pend=JSON.parse(r.result).map(x=>({q:x.q,o:x.o,a:x.a,e:x.e||''}))}catch(_){pend=null;$('eq').value=r.result}};r.readAsText(f)};
+$('tp').onclick=()=>dl('نموذج-الأسئلة.txt','ما عاصمة المملكة العربية السعودية؟|الرياض|جدة|الدمام|مكة|1|الرياض هي العاصمة.\n');
+$('sa').onclick=()=>{const t=$('et').value.trim(),ty=$('ety').value;if(!t)return alert('اكتب عنوان الاختبار');
+const e={id:'u'+Date.now(),g:$('eg').value,s:$('es').value,title:t,type:ty};
+if(ty=='quiz'){e.time=+$('etm').value||0;e.qs=pend||(bq().length?bq():$('eq').value.split('\n').filter(l=>l.trim()).map(parseQ));
+if(!e.qs.length||e.qs.some(q=>(!q.q&&!q.img)||!Array.isArray(q.o)||q.o.length<2||q.o.some(o=>!o)||q.a<0||q.a>=q.o.length))return alert('تحقق من تنسيق الأسئلة: السؤال | أربعة خيارات | رقم الصحيح')}
+else if(ty=='file'){if(!PF)return alert('اختر ملف PDF أو Word أولًا');Object.assign(e,PF);PF=null}else{e.url=$('eu').value.trim();if(!/^https:\/\//.test(e.url))return alert('الصق رابطًا صحيحًا يبدأ بـ https://')}
+if(DB&&CAN&&JSON.stringify(e).length>240000)return alert('حجم الاختبار كبير بسبب الصور؛ قلّل عدد الصور أو قسّمه إلى اختبارين.');user.push(e);sv('qd_exams',user);if(DB&&CAN)DB.doc('exams/'+e.id).set(JSON.parse(JSON.stringify(e))).catch(x=>alert('تعذّر الحفظ في قاعدة البيانات: '+((x&&x.message)||'')));teacher();alert(DB&&CAN?'تم حفظ الاختبار ✓ في قاعدة البيانات':LSOK?'تم حفظ الاختبار على هذا الجهاز ✓\nلإظهاره للطلاب اضغط الزر الأصفر أعلى لوحة المعلم (نشر أو تنزيل نسخة محدّثة).':'تنبيه: لم يُحفظ الاختبار لأن المتصفح يمنع الحفظ هنا. افتح الصفحة من حساب صاحبها ثم أعد إضافته.')};
+app.querySelectorAll('[data-del]').forEach(b=>b.onclick=()=>{if(confirm('حذف الاختبار؟')){if(DB&&CAN)DB.doc('exams/'+b.dataset.del).delete();RM.push(b.dataset.del);sv('qd_rm',RM);user=user.filter(e=>e.id!=b.dataset.del);sv('qd_exams',user);teacher()}});
+$('ex').onclick=()=>dl('exams.json',JSON.stringify(user));$('im').onclick=()=>$('imf').click();
+$('imf').onchange=e=>{const r=new FileReader();r.onload=()=>{try{user=user.concat(JSON.parse(r.result));sv('qd_exams',user);if(DB&&CAN)user.forEach(e=>DB.doc('exams/'+e.id).set(e));teacher()}catch(_){alert('الملف غير صالح')}};r.readAsText(e.target.files[0])};
+$('csv').onclick=()=>dl('results.csv','\ufeff'+'الطالب,الاختبار,الصف,المادة,الدرجة,النسبة,التاريخ\n'+res.map(r=>[r.n,r.t,r.g,r.s,r.sc,r.p,r.d].map(x=>'"'+String(x).replace(/"/g,'""')+'"').join(',')).join('\n'));
+$('cl').onclick=()=>{if(confirm('مسح جميع النتائج؟')){if(DB&&CAN)DB.collection('results').get().then(s=>s.docs.forEach(d=>DB.doc('results/'+d.id).delete()));res=[];sv('qd_res',res);teacher()}};
+$('sp').onclick=()=>{if($('np').value.length>=4){sv('qd_pin',$('np').value);alert('تم حفظ الرمز')}else alert('الرمز 4 خانات على الأقل')};
+scrollTo(0,0)}
+let tok=0,DB=null,UID=null,CAN=false,PF=null;
+function rr(){if(document.getElementById('go'))home();else if(!app.querySelector('#nm')&&app.textContent.includes('الاختبارات المتاحة'))list()}
+function saveRes(r){if(!DB||!UID)return;const ref=DB.doc('results/'+UID);ref.get().then(s=>{const a=((s.exists&&s.data().a)||[]).concat({...r,ts:Date.now()}).slice(-50);return ref.set({n:r.n,a})}).catch(()=>{})}
+function addQ(tf){const d=document.createElement('div'),n=document.querySelectorAll('.qbi').length+1,r='r'+Math.random().toString(36).slice(2);d.className='card qbi';
+d.innerHTML=`<div class='row'><b>سؤال ${n}${tf?' (صح وخطأ)':''}</b><span class='sp'></span><button class='btn r' type='button' data-x>حذف</button></div><input class='qq' placeholder='نص السؤال' aria-label='نص السؤال'><div class='imz' tabindex='0' style='border:2px dashed var(--line);border-radius:12px;padding:10px;margin:8px 0;text-align:center;color:var(--mute)'>🖼️ انقر هنا ثم الصق صورة (Ctrl+V) أو <label style='display:inline;margin:0;cursor:pointer;color:var(--blue)'>اختر ملفًا<input type='file' accept='image/*' hidden></label><div class='imp'></div></div>`+(tf?['صح','خطأ']:[1,2,3,4]).map((o,i)=>`<label class='row orow' style='font-weight:500;margin:6px 0'><input type='radio' name='${r}' value='${i}' ${i?'':'checked'} style='width:auto' aria-label='الإجابة الصحيحة'><input class='qo' ${tf?`value='${o}' readonly`:`placeholder='الخيار ${i+1}'`}>${tf?'':`<button type='button' class='ib obt' title='صورة للخيار' aria-label='إضافة صورة للخيار'>🖼️</button><input type='file' class='ofl' accept='image/*' hidden><span class='op'></span>`}</label>`).join('')+`<input class='qe' placeholder='تفسير الإجابة (اختياري)'><input class='qu' placeholder='الوحدة أو المهارة (اختياري)' style='margin-top:6px'>`;
+d.querySelector('[data-x]').onclick=()=>d.remove();wireImg(d);wireOpt(d);document.getElementById('qb').appendChild(d);return d}
+function clean(h){const d=new DOMParser().parseFromString('<body>'+h,'text/html'),ok=/^(P|H[1-6]|UL|OL|LI|TABLE|THEAD|TBODY|TR|TD|TH|STRONG|B|EM|I|U|BR|SUB|SUP|IMG|A|SPAN|DIV)$/;
+(function w(n){[...n.children].forEach(c=>{if(!ok.test(c.tagName)){c.remove();return}[...c.attributes].forEach(a=>{const k=a.name;if(!(k=='colspan'||k=='rowspan'||(c.tagName=='IMG'&&k=='src'&&/^data:image\/(png|jpe?g|gif);base64,/.test(a.value))))c.removeAttribute(k)});if(c.tagName=='IMG'&&!c.getAttribute('src'))c.remove();else w(c)})})(d.body);return d.body.innerHTML}
+function loadMammoth(){return window.mammoth?Promise.resolve():new Promise((ok,no)=>{const s=document.createElement('script');s.src='https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.6.0/mammoth.browser.min.js';s.onload=ok;s.onerror=no;document.head.appendChild(s)})}
+async function fileIn(f){const st=document.getElementById('fst');PF=null;if(!f)return;const n=f.name.toLowerCase();let note='';st.textContent='جارٍ معالجة الملف…';
+try{if(n.endsWith('.pdf')){let u=null;try{const as=window.claude&&await claude.use('assets');if(as){const r=await as.upload(f);u=r&&r.url}}catch(e){}
+if(!u){if(f.size>(window.claude?170000:2500000))throw 'big';u=await new Promise((ok,no)=>{const r=new FileReader();r.onload=()=>ok(r.result);r.onerror=no;r.readAsDataURL(f)})}
+PF={fileType:'pdf',fileUrl:u,fileName:f.name}}
+else if(n.endsWith('.docx')){await loadMammoth();const ab=await f.arrayBuffer();let r=await mammoth.convertToHtml({arrayBuffer:ab}),h=clean(r.value);
+if(h.length>200000){r=await mammoth.convertToHtml({arrayBuffer:ab},{convertImage:mammoth.images.imgElement(()=>({src:''}))});h=clean(r.value);note=' (حُذفت الصور لكبر الحجم)'}
+if(h.length>230000)throw 'big';PF={fileType:'docx',html:h,fileName:f.name}}
+else throw 'type';
+st.textContent='✓ تم تجهيز الملف: '+f.name+note}catch(e){PF=null;st.textContent=e=='big'?'الملف كبير. سجّل الدخول بحساب المعلم لرفع ملفات PDF الكبيرة، أو قلّل حجم ملف Word.':e=='type'?'الملفات المسموحة: PDF وWord بصيغة docx فقط.':'تعذّرت قراءة الملف.'}}
+function fileView(){const pdf=ex.fileType=='pdf';app.innerHTML=crumb()+`<div class='card'><div class='row noprint'><b class='sp'>${esc(ex.title)}</b>${pdf?`<a class='btn o' href='${esc(ex.fileUrl)}' target='_blank' rel='noopener'>فتح في نافذة جديدة</a>`:`<button class='btn o' id='pf'>🖨️ طباعة</button>`}</div>${pdf?`<iframe src='${esc(ex.fileUrl)}' title='${esc(ex.title)}' loading='lazy'></iframe>`:`<div class='doc'>${clean(ex.html||'')}</div>`}</div><button class='btn o noprint' id='bk'>رجوع</button>`;
+document.getElementById('bk').onclick=list;const p=document.getElementById('pf');if(p)p.onclick=()=>print();scrollTo(0,0)}
+const TPL='1. ما عاصمة المملكة العربية السعودية؟\nأ) جدة\nب) الرياض\nج) الدمام\nد) مكة\nالإجابة: ب\nالتفسير: الرياض هي العاصمة.\nالمهارة: الجغرافيا\n\n2. الشمس نجم.\nالإجابة: صح\n';
+function parseDoc(t){const dg=s=>s.replace(/[٠-٩]/g,c=>c.charCodeAt(0)-1632),L=t.split(/\r?\n/).map(s=>s.trim()).filter(Boolean),Q=[];let c=null;
+const A=/^(?:الإجابة الصحيحة|الإجابة|الاجابة|الجواب|Answer|Ans)\s*[:：–-]?\s*(.+)$/i,E=/^(?:التفسير|الشرح|التعليل|Explanation)\s*[:：]\s*(.+)$/i,K=/^(?:المهارة|الوحدة|الدرس|Skill)\s*[:：]\s*(.+)$/i,N=/^(?:س\s*|Q\s*)?[0-9٠-٩]+\s*[.)/:：–-]\s*(.+)$/i,O=/^\(?([أاإبجدA-Da-d])\s*[.)/:：–-]\s*(.+)$/,LM=/^\(?([أاإبجدA-Da-d])(?:\s*[.)–-].*)?$/;
+const nw=q=>{c={q,o:[],a:-1,e:'',u:''};Q.push(c)},ix=ch=>'أاإ'.includes(ch)?0:ch=='ب'?1:ch=='ج'?2:ch=='د'?3:'abcd'.indexOf(ch.toLowerCase());
+for(const l of L){let m;
+if(m=l.match(A)){if(!c)continue;const v=dg(m[1]).trim(),tf=/^(صح|صحيح|true|✓|√)/i.test(v),ff=/^(خطأ|خطا|خاطئ|false|✗|×)/i.test(v),lm=v.match(LM);
+if(!c.o.length&&(tf||ff)){c.o=['صح','خطأ'];c.a=tf?0:1}else if(/^[1-4]$/.test(v))c.a=+v-1;else if(lm)c.a=ix(lm[1]);else c.a=c.o.findIndex(o=>o==v)}
+else if(m=l.match(E)){if(c)c.e=m[1]}
+else if(m=l.match(K)){if(c)c.u=m[1]}
+else if(m=l.match(N))nw(m[1]);
+else if(c&&c.a<0&&(m=l.match(O)))c.o.push(m[2]);
+else if(!c||c.a>=0)nw(l);
+else if(c.o.length||/[؟?:]$|_{2,}|…$/.test(c.q))c.o.push(l);
+else c.q+=' '+l}
+return Q.filter(q=>q.q&&q.o.length>=2).map(q=>{if(q.a>=q.o.length)q.a=-1;return q})}
+function fillQ(q){const tf=q.o.length==2&&q.o[0]=='صح'&&q.o[1]=='خطأ',d=addQ(tf?1:0);d.querySelector('.qq').value=q.q;if(!tf){const os=d.querySelectorAll('.qo');q.o.slice(0,4).forEach((o,i)=>os[i].value=o)}
+const r=d.querySelectorAll('input[type=radio]');if(q.a>=0&&r[q.a])r[q.a].checked=true;d.querySelector('.qe').value=q.e;d.querySelector('.qu').value=q.u;if(q.a<0)d.style.borderColor='var(--bad)'}
+async function docQ(f){const st=document.getElementById('wst');if(!f)return;if(!f.name.toLowerCase().endsWith('.docx')){st.textContent='ارفع ملف Word بصيغة docx';return}st.textContent='جارٍ قراءة الملف…';
+try{await loadMammoth();const r=await mammoth.extractRawText({arrayBuffer:await f.arrayBuffer()}),Q=parseDoc(r.value);
+if(!Q.length){st.textContent='لم أجد أسئلة. تأكد من التنسيق وجرّب النموذج.';return}
+document.querySelectorAll('.qbi').forEach(d=>{if(!d.querySelector('.qq').value&&![...d.querySelectorAll('.qo')].some(x=>x.value&&!x.readOnly))d.remove()});
+Q.forEach(fillQ);const bad=Q.filter(q=>q.a<0).length;
+st.textContent='✓ تم استخراج '+Q.length+' سؤالًا'+(bad?'، منها '+bad+' بلا إجابة صحيحة محددة (بإطار أحمر) — حدّدها بالدائرة':'')+'. راجع الأسئلة أدناه ثم احفظ الاختبار.'}catch(e){st.textContent='تعذّرت قراءة الملف.'}}
+let RM=ld('qd_rm',[]);
+function cur(){const seen={};return SEED.exams.concat(user).filter(e=>!RM.includes(e.id)&&!seen[e.id]&&(seen[e.id]=1))}
+function buildDoc(seed){const c=document.documentElement.cloneNode(true);c.removeAttribute('data-theme');
+c.querySelectorAll('head>*').forEach(n=>{if(!(n.hasAttribute('data-k')||/^(META|TITLE)$/.test(n.tagName)))n.remove()});
+c.querySelectorAll('body>*').forEach(n=>{if(!(n.hasAttribute('data-k')||/^(HEADER|MAIN|FOOTER)$/.test(n.tagName)))n.remove()});
+c.querySelector('#app').innerHTML='';c.querySelector('#ds').textContent='';c.querySelector('#seed').textContent=JSON.stringify(seed).replace(/</g,'\\u003c');
+return '<!DOCTYPE html>\n'+c.outerHTML}
+async function pubAll(){const s=document.getElementById('pst');try{const a=window.claude&&await claude.use('artifact');
+let w=document.getElementById('wa').value.replace(/[^0-9]/g,'');if(w.indexOf('00')==0)w=w.slice(2);if(w.indexOf('0')==0)w='966'+w.slice(1);
+const ex2=cur();if(!confirm('سيظهر '+ex2.length+' اختبار لكل من يفتح الرابط. متابعة؟'))return;
+s.textContent='جارٍ النشر…';if(a){await a.publish(buildDoc({exams:ex2,wa:w}));RM=[];sv('qd_rm',RM)}else{await dl('index.html',buildDoc({exams:ex2,wa:w}));s.textContent='✓ تم تجهيز ملف index.html بالاختبارات الحالية. اسحبه إلى موقعك على Netlify لتحديثه.'}}
+catch(e){s.textContent=e&&e.code=='conflict'?'تعارض مع نسخة أحدث، أعد المحاولة.':'تعذّر النشر: '+((e&&e.message)||'خطأ')}}
+function oh(q,i,o){const m=q.oi&&q.oi[i];return(m?'<img class="oimg" src="'+esc(m)+'" alt="">':'')+((m&&o.indexOf('(صورة ')==0)?'':esc(o))}
+function wireOpt(d){d.querySelectorAll('.orow').forEach(r=>{const b=r.querySelector('.obt');if(!b)return;const f=r.querySelector('.ofl'),p=r.querySelector('.op');
+const show=()=>{p.innerHTML=r.dataset.img?`<img src='${r.dataset.img}' alt='' style='height:44px;border-radius:8px;vertical-align:middle'> <button type='button' class='ib'>✕</button>`:'';const x=p.querySelector('button');if(x)x.onclick=e=>{e.preventDefault();delete r.dataset.img;show()}};
+const put=async fl=>{p.textContent='…';try{r.dataset.img=await imgUrl(fl)}catch(e){alert('تعذّر معالجة الصورة')}show()};
+b.onclick=e=>{e.preventDefault();f.click()};f.onchange=()=>{if(f.files[0])put(f.files[0])};
+r.querySelector('.qo').addEventListener('paste',e=>{const it=[...((e.clipboardData&&e.clipboardData.items)||[])].find(i=>i.type.indexOf('image/')==0);if(it){e.preventDefault();e.stopPropagation();put(it.getAsFile())}})})}
+async function imgUrl(f){const bm=await createImageBitmap(f),k=Math.min(1,600/bm.width),c=document.createElement('canvas');c.width=Math.round(bm.width*k);c.height=Math.round(bm.height*k);const x=c.getContext('2d');x.fillStyle='#fff';x.fillRect(0,0,c.width,c.height);x.drawImage(bm,0,0,c.width,c.height);
+const bl=await new Promise(r=>c.toBlob(r,'image/jpeg',.72));
+try{const as=window.claude&&await claude.use('assets');if(as){const r=await as.upload(bl);if(r&&r.url)return r.url}}catch(e){}
+return await new Promise((ok,no)=>{const r=new FileReader();r.onload=()=>ok(r.result);r.onerror=no;r.readAsDataURL(bl)})}
+function wireImg(d){const z=d.querySelector('.imz'),p=d.querySelector('.imp');
+const show=()=>{p.innerHTML=d.dataset.img?`<img class='qi' src='${d.dataset.img}' alt='' style='margin:8px auto'><button class='btn r' type='button'>إزالة الصورة</button>`:'';const b=p.querySelector('button');if(b)b.onclick=()=>{delete d.dataset.img;show()}};
+const put=async f=>{p.textContent='جارٍ تجهيز الصورة…';try{d.dataset.img=await imgUrl(f)}catch(e){alert('تعذّر معالجة الصورة')}show()};
+d.addEventListener('paste',e=>{const it=[...((e.clipboardData&&e.clipboardData.items)||[])].find(i=>i.type.indexOf('image/')==0);if(it){e.preventDefault();put(it.getAsFile())}});
+z.querySelector('input').onchange=e=>{if(e.target.files[0])put(e.target.files[0])}}
+function bq(){return[...document.querySelectorAll('.qbi')].map(d=>{const qs=[...d.querySelectorAll('.qo')],o=qs.map(x=>x.value.trim()),oi=qs.map(x=>x.closest('.orow').dataset.img||''),r=d.querySelector('input[type=radio]:checked');o.forEach((t,i)=>{if(!t&&oi[i])o[i]='(صورة '+(i+1)+')'});while(o.length>2&&!o[o.length-1]){o.pop();oi.pop()}return{q:d.querySelector('.qq').value.trim(),o,oi:oi.some(Boolean)?oi:[],a:r?+r.value:0,e:d.querySelector('.qe').value.trim(),u:d.querySelector('.qu').value.trim(),img:d.dataset.img||''}}).filter(q=>q.q||q.img)}
+function badges(p,n){const c=res.filter(r=>r.n==n).length+1,b=[];if(p==100)b.push('🥇 العلامة الكاملة');else if(p>=90)b.push('⭐ متفوق');if(c>=3)b.push('🔥 مثابر ('+c+' محاولات)');if(!b.length)b.push('🌱 بداية موفقة');return b.map(x=>'<span class="tag f">'+x+'</span>').join(' ')}
+function skills(){const m={};st.qs.forEach((q,i)=>{if(!q.u)return;m[q.u]=m[q.u]||[0,0];m[q.u][1]++;if(st.ans[i]==q.a)m[q.u][0]++});const k=Object.keys(m);if(!k.length)return'';return`<div style='text-align:right;margin-top:14px'><b>مستواك في المهارات</b>${k.map(u=>{const p=Math.round(m[u][0]/m[u][1]*100);return`<div class='row' style='margin-top:6px'><span style='min-width:110px'>${esc(u)}</span><div class='prog sp' style='margin:0'><i style='width:${p}%;background:${p>=75?'var(--ok)':'var(--bad)'}'></i></div><span>${p}٪</span></div>`}).join('')}${k.some(u=>m[u][0]/m[u][1]<.75)?`<p class='warn'>راجع المهارات ذات الشريط الأحمر ثم أعد المحاولة.</p>`:''}</div>`}
+function honor(){const t=res.slice().sort((a,b)=>b.p-a.p).slice(0,5);return t.length?`<h3>🏆 لوحة الشرف</h3><div class='card'>${t.map((r,i)=>`<div class='row'><b>${['🥇','🥈','🥉','٤','٥'][i]}</b><span class='sp'>${esc(r.n)} <small>${esc(r.t)}</small></span><b>${r.p}٪</b></div>`).join('')}</div>`:''}
+function cert(n,p){app.innerHTML=`<div class='card' style='text-align:center;border:6px double var(--gold);padding:30px 18px'><img src='${document.querySelector('.bar img').src}' alt='' style='width:80px;height:80px;border-radius:50%'><h2 style='margin:8px 0'>شهادة تقدير</h2><p>تمنح مدرسة القادسية الأهلية الطالب/ـة</p><h1 style='color:var(--maroon);margin:6px 0'>${esc(n)}</h1><p>تقديرًا لتحقيقه نسبة ${p}٪ في «${esc(ex.title)}» — ${G[ex.g]}، ${S[ex.s][0]}</p><p>${new Date().toLocaleDateString('ar-SA')}</p></div><div class='row noprint'><button class='btn' onclick='print()'>طباعة الشهادة</button><button class='btn o' id='bk'>الرئيسية</button></div>`;document.getElementById('bk').onclick=home;scrollTo(0,0)}
+async function dl(n,t){try{const d=window.claude&&await claude.use('downloads');if(d){await d.save({filename:n,data:t});return}}catch(e){if(e&&e.code=='declined')return}const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([t]));a.download=n;a.click()}
+document.getElementById('tc').onclick=teacher;
+document.querySelector('.bar img').onclick=()=>{sel={g:null,s:null};home()};
+document.getElementById('th').onclick=()=>{const d=document.documentElement,dark=getComputedStyle(d).getPropertyValue('--bg').trim()=='#0e1a2a';d.dataset.theme=dark?'light':'dark'};
+home();
+(async()=>{const ds=document.getElementById('ds');try{if(!window.claude)throw 0;const d=await claude.use('db');if(!d)throw 0;const u=await claude.use('user');DB=d;UID=u?await u.id():null;CAN=u?await u.canEdit():false;
+DB.collection('exams').onSnapshot(s=>{user=s.docs.map(x=>x.data());rr()},()=>{});
+DB.collection('results').onSnapshot(s=>{res=s.docs.flatMap(x=>(x.data()||{}).a||[]).sort((a,b)=>(a.ts||0)-(b.ts||0));rr()},()=>{});
+ds.textContent='🟢 متصل بقاعدة البيانات المشتركة'+(CAN?' (وضع المعلم)':'')}catch(e){ds.textContent='⚪ تُحفظ نتائجك على هذا الجهاز'}})();
+</script>
+</body>
+</html>
